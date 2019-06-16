@@ -1,0 +1,24 @@
+## Interface: 80100
+## Title: LevelUpSpells
+## Author: coolmodi
+## Notes: Tells what spells can be learned at which level.
+## Notes-deDE: Zeigt welche Fähigkeiten auf welchem level gelernt werden können.
+## Version: 1.0
+
+i18n/loc.lua
+i18n/enUS.lua
+i18n/deDE.lua
+
+data/druid.lua
+data/hunter.lua
+data/mage.lua
+data/paladin.lua
+data/priest.lua
+data/rogue.lua
+data/shaman.lua
+data/warlock.lua
+data/warrior.lua
+
+main.lua
+slashcmds.lua
+events.lua
