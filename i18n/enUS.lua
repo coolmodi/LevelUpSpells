@@ -7,7 +7,7 @@ L["CHATLINE_NONE_AVAILABLE_AT_LEVEL"] = "|cFFFFFF55No spells available at level 
 L["CHATLINE_ALL_LEARNED"] = "|cFFFFFF55You learned all available spells for your level already!"
 L["CHATLINE_MISSING_SPELL"] = "|cFFFFFF55You are missing one spell:"
 L["CHATLINE_MISSING_SPELLS"] = "|cFFFFFF55You are missing %d spells:"
-L["CHATLINE_LEVEL"] = "|cFFFFFF99Level %d:"
+L["CHATLINE_LEVEL"] = "|cFFFFFF99Spells for level %d:"
 
 L["SOURCE_CLASS_QUEST"] = "Reward from class quest"
 L["SOURCE_BOOK"] = "Requires a book"

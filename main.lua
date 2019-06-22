@@ -1,4 +1,4 @@
-local CURRENT_PHASE = 99 -- TODO: Set real value, also can we get this over the API in some way?
+local CURRENT_PHASE = 1
 
 local _addonName, _addon = ...
 local L = _addon:GetLocalization()
@@ -41,17 +41,21 @@ end
 function _addon:GetSpellsForLevel(level, filterLearned, spellTable)
     if _addon.spells[level] == nil then return nil, 0 end
     local spells = spellTable or {}
+    local spellsOnLevel = {}
     local foundSpells = 0
-    spells[level] = {}
     
     for _, spell in ipairs(_addon.spells[level]) do
         if IsSpellAvailable(spell, filterLearned) then
-            table.insert(spells[level], spell)
+            table.insert(spellsOnLevel, spell)
             foundSpells = foundSpells + 1
         end
     end
     
-    if foundSpells > 0 then return spells, foundSpells end
+    if foundSpells > 0 then 
+        spells[level] = spellsOnLevel
+        return spells, foundSpells 
+    end
+    
     return nil, foundSpells
 end
 
@@ -71,17 +75,17 @@ end
 
 --- Print spell list
 -- @param spells A list from the Get... functions
-function _addon:OutputSpellList(spells)
+-- @param dontPrintLevel If true don't prepend "Level x:"
+function _addon:OutputSpellList(spells, dontPrintLevel)
     local line, name, rank = "", "", ""
     for level, lvlspells in pairs(spells) do
-        print(L["CHATLINE_LEVEL"]:format(level))
+        if dontPrintLevel ~= true then print(L["CHATLINE_LEVEL"]:format(level)) end
         for _, spell in ipairs(spells[level]) do
             name, rank = GetSpellInfo(spell.id)
             if name == nil then 
                 line = "|cFFFF5500 ERROR: SPELL " .. spell.id .. " NOT FOUND" .. " |h|r"
             else
                 if rank and rank ~= "" then name = name .. " (" .. rank .. ")" end
-                -- TODO: Does this work in classic?
                 line = "|cFF77FF77|Hspell:" .. spell.id .. "|h[" .. name .. "] |h|r"
                 if spell.aquire ~= nil then
                     if spell.aquire == "quest" then
@@ -95,7 +99,6 @@ function _addon:OutputSpellList(spells)
                         end
                     end
                 else
-                    -- TODO: Does this work in classic?
                     line = line .. GetCoinTextureString(spell.cost)
                 end
             end
@@ -103,20 +106,3 @@ function _addon:OutputSpellList(spells)
         end
     end
 end
-
-
---[[
-NOT NEEDED AFTER ALL, BfA at least has GetCoinTextureString()
---- Turn copper value into Xg Xs Xc string
--- @param val A price as copper value
-local function Copper2String(val)
-    local c = val%100
-    local s = math.floor(val%10000 / 100)
-    local g = math.floor(val / 10000)
-    local str = ""
-    if g ~= 0 then str = g .. "|TInterface\MoneyFrame\UI-GoldIcon:14:14:2:0t " end
-    if s ~= 0 then str = str .. s .. "|TInterface\MoneyFrame\UI-SilverIcon:14:14:2:0t " end
-    if c ~= 0 then str = str .. c .. "|TInterface\MoneyFrame\UI-CopperIcon:14:14:2:0t " end
-    return strtrim(str)
-end
-]]--

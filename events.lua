@@ -6,10 +6,10 @@ local timeElapsed = 0
 
 local function UpdateTimer(self, diff)
     timeElapsed = timeElapsed + diff
-    if timeElapsed < 1.5 then return end
+    if timeElapsed < 0.5 then return end
     
     print(L["CHATLINE_SPELLS_AVAILABLE"])
-    _addon:OutputSpellList(spellsCache)
+    _addon:OutputSpellList(spellsCache, true)
     
     spellsCache = nil
     frame:SetScript("OnUpdate", nil)
