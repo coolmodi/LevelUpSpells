@@ -8,7 +8,7 @@ _addon.spells = {
         {id = 6673, cost = 10}, -- Battle Shout (1)
     },
     [4] = {
-        {id = 772, cost = 100, cost = 100}, -- Rend (1)
+        {id = 772, cost = 100}, -- Rend (1)
         {id = 100, cost = 100}, -- Charge (1)
     },
     [6] = {
