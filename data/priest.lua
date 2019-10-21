@@ -57,8 +57,8 @@ _addon.spells = {
         {id = 14914, cost = 3000}, -- Holy Fire (1)
         {id = 453, cost = 3000}, -- Mind Soothe (1)
         {id = 2944, aquire = "quest", race = "Scourge"}, -- Devouring Plague (1)
-        {id = 19261, race = "Scourge"}, -- Touch of Weakness (2)
-        {id = 19281, race = "Troll"}, -- Hex of Weakness (2)
+        {id = 19261, cost = 100, race = "Scourge"}, -- Touch of Weakness (2)
+        {id = 19281, cost = 100, race = "Troll"}, -- Hex of Weakness (2)
         {id = 9484, cost = 3000}, -- Shackle Undead (1)
         {id = 7128, cost = 3000}, -- Inner Fire (2)
         {id = 6346, aquire = "quest", race = "Dwarf"}, -- Fear Ward

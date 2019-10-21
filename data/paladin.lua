@@ -197,7 +197,7 @@ _addon.spells = {
         {id = 20773, cost = 46000}, -- Redemption (5)
         {id = 25292, aquire = "book", source = "AQ20", from = "BOSSES", phase = 5}, -- Holy Light (9)
         {id = 25290, aquire = "book", source = "AQ20", from = "BOSSES", phase = 5}, -- Blessing of Wisdom (6)
-        {id = 25918, requires = 25290}, -- Greater Blessing of Wisdom (2)
+        {id = 25918, cost = 46000, requires = 25290}, -- Greater Blessing of Wisdom (2)
         {id = 20924, cost = 2300, talentReq = {1,5}}, -- Consecration (5)
         {id = 23214, aquire = "quest"}, -- Summon Charger (Summon)
         {id = 25890, cost = 46000}, -- Greater Blessing of Light (1)
