@@ -1,6 +1,6 @@
-local CURRENT_PHASE = 1
+local CURRENT_PHASE = 2;
 
-local _addonName, _addon = ...
+local _, _addon = ...
 local L = _addon:GetLocalization()
 local _, race = UnitRace("player")
 local faction = UnitFactionGroup("player")
@@ -77,32 +77,34 @@ end
 -- @param spells A list from the Get... functions
 -- @param dontPrintLevel If true don't prepend "Level x:"
 function _addon:OutputSpellList(spells, dontPrintLevel)
-    local line, name, rank = "", "", ""
-    for level, lvlspells in pairs(spells) do
-        if dontPrintLevel ~= true then print(L["CHATLINE_LEVEL"]:format(level)) end
-        for _, spell in ipairs(spells[level]) do
-            name, rank = GetSpellInfo(spell.id)
-            if name == nil then 
-                line = "|cFFFF5500 ERROR: SPELL " .. spell.id .. " NOT FOUND" .. " |h|r"
-            else
-                if rank and rank ~= "" then name = name .. " (" .. rank .. ")" end
-                line = "|cFF77FF77|Hspell:" .. spell.id .. "|h[" .. name .. "] |h|r"
-                if spell.aquire ~= nil then
-                    if spell.aquire == "quest" then
-                        line = line .. L["SOURCE_CLASS_QUEST"] .. "."
-                    elseif spell.aquire == "book" then
-                        line = line .. L["SOURCE_BOOK"] .. ". "
-                        if spell.source == nil then
-                            line = line .. L["SOURCE_BOOK_SPECIFY"]:format(L["DUNGEONS"]) .. "."
-                        else
-                            line = line .. L["SOURCE_BOOK_SPECIFY_MORE"]:format(L[spell.source], L[spell.from]) .. "."
-                        end
-                    end
+    local line, name, rank = "", "", "";
+    for level = 1, 60, 1 do
+        if spells[level] ~= nil then
+            if dontPrintLevel ~= true then print(L["CHATLINE_LEVEL"]:format(level)) end
+            for _, spell in ipairs(spells[level]) do
+                name, rank = GetSpellInfo(spell.id)
+                if name == nil then 
+                    line = "|cFFFF5500 ERROR: SPELL " .. spell.id .. " NOT FOUND" .. " |h|r"
                 else
-                    line = line .. GetCoinTextureString(spell.cost)
+                    if rank and rank ~= "" then name = name .. " (" .. rank .. ")" end
+                    line = "|cFF77FF77|Hspell:" .. spell.id .. "|h[" .. name .. "] |h|r"
+                    if spell.aquire ~= nil then
+                        if spell.aquire == "quest" then
+                            line = line .. L["SOURCE_CLASS_QUEST"] .. "."
+                        elseif spell.aquire == "book" then
+                            line = line .. L["SOURCE_BOOK"] .. ". "
+                            if spell.source == nil then
+                                line = line .. L["SOURCE_BOOK_SPECIFY"]:format(L["DUNGEONS"]) .. "."
+                            else
+                                line = line .. L["SOURCE_BOOK_SPECIFY_MORE"]:format(L[spell.source], L[spell.from]) .. "."
+                            end
+                        end
+                    else
+                        line = line .. GetCoinTextureString(spell.cost)
+                    end
                 end
+                print(line)
             end
-            print(line)
         end
     end
 end
