@@ -5,7 +5,7 @@ local _, _addon = ...
 
 _addon.spells = {
     [1] = {
-        {id = 465, cost = 10}, -- Devotion Aura (1)
+        {id = 465, cost = 10, isUnique = true}, -- Devotion Aura (1)
     },
     [4] = {
         {id = 19740, cost = 100}, -- Blessing of Might (1)
@@ -22,7 +22,7 @@ _addon.spells = {
         {id = 3127, cost = 100}, -- Parry (Passive)
     },
     [10] = {
-        {id = 10290, cost = 300}, -- Devotion Aura (2)
+        {id = 10290, cost = 300, isUnique = true}, -- Devotion Aura (2)
         {id = 1022, cost = 300}, -- Blessing of Protection (1)
         {id = 633, cost = 300}, -- Lay on Hands (1)
         {id = 20287, cost = 300}, -- Seal of Righteousness (2)
@@ -37,7 +37,7 @@ _addon.spells = {
         {id = 19742, cost = 2000}, -- Blessing of Wisdom (1)
     },
     [16] = {
-        {id = 7294, cost = 3000}, -- Retribution Aura (1)
+        {id = 7294, cost = 3000, isUnique = true}, -- Retribution Aura (1)
         {id = 25780, cost = 3000}, -- Righteous Fury
     },
     [18] = {
@@ -46,7 +46,7 @@ _addon.spells = {
         {id = 20288, cost = 3500}, -- Seal of Righteousness (3)
     },
     [20] = {
-        {id = 643, cost = 4000}, -- Devotion Aura (3)
+        {id = 643, cost = 4000, isUnique = true}, -- Devotion Aura (3)
         {id = 879, cost = 4000}, -- Exorcism (1)
         {id = 5502, aquire = "quest"}, -- Sense Undead
         {id = 19750, cost = 4000}, -- Flash of Light (1)
@@ -55,7 +55,7 @@ _addon.spells = {
         {id = 19835, cost = 4000}, -- Blessing of Might (3)
         {id = 20164, cost = 4000}, -- Seal of Justice
         {id = 1026, cost = 4000}, -- Holy Light (4)
-        {id = 19746, cost = 4000}, -- Concentration Aura
+        {id = 19746, cost = 4000, isUnique = true}, -- Concentration Aura
         {id = 20305, cost = 4000}, -- Seal of the Crusader (3)
     },
     [24] = {
@@ -66,17 +66,17 @@ _addon.spells = {
         {id = 2878, cost = 5000}, -- Turn Undead (1)
     },
     [26] = {
-        {id = 10298, cost = 6000}, -- Retribution Aura (2)
+        {id = 10298, cost = 6000, isUnique = true}, -- Retribution Aura (2)
         {id = 1038, cost = 6000}, -- Blessing of Salvation
         {id = 19939, cost = 6000}, -- Flash of Light (2)
         {id = 20289, cost = 6000}, -- Seal of Righteousness (4)
     },
     [28] = {
-        {id = 19876, cost = 9000}, -- Shadow Resistance Aura (1)
+        {id = 19876, cost = 9000, isUnique = true}, -- Shadow Resistance Aura (1)
         {id = 5614, cost = 9000}, -- Exorcism (2)
     },
     [30] = {
-        {id = 10291, cost = 11000}, -- Devotion Aura (4)
+        {id = 10291, cost = 11000, isUnique = true}, -- Devotion Aura (4)
         {id = 19752, cost = 11000}, -- Divine Intervention
         {id = 2800, cost = 11000}, -- Lay on Hands (2)
         {id = 20165, cost = 11000}, -- Seal of Light (1)
@@ -86,7 +86,7 @@ _addon.spells = {
     },
     [32] = {
         {id = 19836, cost = 12000}, -- Blessing of Might (4)
-        {id = 19888, cost = 12000}, -- Frost Resistance Aura (1)
+        {id = 19888, cost = 12000, isUnique = true}, -- Frost Resistance Aura (1)
         {id = 20306, cost = 12000}, -- Seal of the Crusader (4)
     },
     [34] = {
@@ -96,8 +96,8 @@ _addon.spells = {
         {id = 20290, cost = 13000}, -- Seal of Righteousness (5)
     },
     [36] = {
-        {id = 10299, cost = 14000}, -- Retribution Aura (3)
-        {id = 19891, cost = 14000}, -- Fire Resistance Aura (1)
+        {id = 10299, cost = 14000, isUnique = true}, -- Retribution Aura (3)
+        {id = 19891, cost = 14000, isUnique = true}, -- Fire Resistance Aura (1)
         {id = 5615, cost = 14000}, -- Exorcism (3)
         {id = 10324, cost = 14000}, -- Redemption (3)
     },
@@ -108,8 +108,8 @@ _addon.spells = {
         {id = 5627, cost = 16000}, -- Turn Undead (2)
     },
     [40] = {
-        {id = 1032, cost = 20000}, -- Devotion Aura (5)
-        {id = 19895, cost = 20000}, -- Shadow Resistance Aura (2)
+        {id = 1032, cost = 20000, isUnique = true}, -- Devotion Aura (5)
+        {id = 19895, cost = 20000, isUnique = true}, -- Shadow Resistance Aura (2)
         {id = 5589, cost = 20000}, -- Hammer of Justice (3)
         {id = 13819, aquire = "quest"}, -- Summon Warhorse (Summon)
         {id = 20922, cost = 1000, talentReq = {1,5}}, -- Consecration (3)
@@ -128,23 +128,23 @@ _addon.spells = {
     },
     [44] = {
         {id = 24275, cost = 22000}, -- Hammer of Wrath (1)
-        {id = 19897, cost = 22000}, -- Frost Resistance Aura (2)
+        {id = 19897, cost = 22000, isUnique = true}, -- Frost Resistance Aura (2)
         {id = 10312, cost = 22000}, -- Exorcism (4)
         {id = 19853, cost = 22000}, -- Blessing of Wisdom (4)
     },
     [46] = {
-        {id = 10300, cost = 24000}, -- Retribution Aura (4)
+        {id = 10300, cost = 24000, isUnique = true}, -- Retribution Aura (4)
         {id = 6940, cost = 24000}, -- Blessing of Sacrifice (1)
         {id = 10328, cost = 24000}, -- Holy Light (7)
     },
     [48] = {
-        {id = 19899, cost = 26000}, -- Fire Resistance Aura (2)
+        {id = 19899, cost = 26000, isUnique = true}, -- Fire Resistance Aura (2)
         {id = 20772, cost = 26000}, -- Redemption (4)
         {id = 20929, cost = 1170, talentReq = {1,14}}, -- Holy Shock (2)
         {id = 20356, cost = 26000}, -- Seal of Wisdom (2)
     },
     [50] = {
-        {id = 10292, cost = 28000}, -- Devotion Aura (6)
+        {id = 10292, cost = 28000, isUnique = true}, -- Devotion Aura (6)
         {id = 10310, cost = 28000}, -- Lay on Hands (3)
         {id = 2812, cost = 28000}, -- Holy Wrath (1)
         {id = 19942, cost = 28000}, -- Flash of Light (5)
@@ -161,7 +161,7 @@ _addon.spells = {
         {id = 19838, cost = 34000}, -- Blessing of Might (6)
         {id = 25782, cost = 46000}, -- Greater Blessing of Might (1)
         {id = 24274, cost = 34000}, -- Hammer of Wrath (2)
-        {id = 19896, cost = 34000}, -- Shadow Resistance Aura (3)
+        {id = 19896, cost = 34000, isUnique = true}, -- Shadow Resistance Aura (3)
         {id = 10313, cost = 34000}, -- Exorcism (5)
         {id = 10326, cost = 34000}, -- Turn Undead (3)
         {id = 20308, cost = 34000}, -- Seal of the Crusader (6)
@@ -174,8 +174,8 @@ _addon.spells = {
         {id = 20729, cost = 40000}, -- Blessing of Sacrifice (2)
     },
     [56] = {
-        {id = 10301, cost = 42000}, -- Retribution Aura (5)
-        {id = 19898, cost = 42000}, -- Frost Resistance Aura (3)
+        {id = 10301, cost = 42000, isUnique = true}, -- Retribution Aura (5)
+        {id = 19898, cost = 42000, isUnique = true}, -- Frost Resistance Aura (3)
         {id = 20930, cost = 2100, talentReq = {1,14}}, -- Holy Shock (3)
     },
     [58] = {
@@ -187,8 +187,8 @@ _addon.spells = {
         {id = 25291, aquire = "book", source = "AQ20", from = "BOSSES", phase = 5}, -- Blessing of Might (7)
         {id = 25916, cost = 41400, requires = 25291}, -- Greater Blessing of Might (2)
         {id = 24239, cost = 46000}, -- Hammer of Wrath (3)
-        {id = 10293, cost = 46000}, -- Devotion Aura (7)
-        {id = 19900, cost = 46000}, -- Fire Resistance Aura (3)
+        {id = 10293, cost = 46000, isUnique = true}, -- Devotion Aura (7)
+        {id = 19900, cost = 46000, isUnique = true}, -- Fire Resistance Aura (3)
         {id = 20914, cost = 2070, talentReq = {2, 12}}, -- Blessing of Sanctuary (4)
         {id = 25899, cost = 2070, talentReq = {2, 12}}, -- Greater Blessing of Sanctuary (1)
         {id = 25898, cost = 2070, talentReq = {2,6}}, -- Greater Blessing of Kings

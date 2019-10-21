@@ -3,7 +3,7 @@
 ## Author: coolmodi
 ## Notes: Tells what spells can be learned at which level.
 ## Notes-deDE: Zeigt welche Fähigkeiten auf welchem level gelernt werden können.
-## Version: 1.0.1
+## Version: 1.0.2
 
 i18n/loc.lua
 i18n/enUS.lua

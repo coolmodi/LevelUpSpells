@@ -28,6 +28,30 @@ local function IsSpellAvailable(spell, filterLearned)
         end
         if not found then return false end
     end
+    if spell.requires and not IsSpellKnown(spell.requires, false) then
+        return false;
+    end
+
+    if spell.isUnique then
+        local spellName, spellRank = GetSpellInfo(spell.id);
+        spellRank = string.match(spellRank, "%d");
+        local i = 1;
+        while true do
+            local itemName, itemRank = GetSpellBookItemName(i, BOOKTYPE_SPELL);
+            if not itemName then
+                break;
+            end
+            itemRank = string.match(itemRank, "%d");
+            if itemName == spellName then
+                if spellRank and itemRank and spellRank < itemRank then
+                    return false;
+                end
+                break;
+            end
+            i = i + 1;
+        end
+    end
+
     return true
 end
 
